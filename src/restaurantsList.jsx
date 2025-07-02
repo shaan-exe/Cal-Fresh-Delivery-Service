@@ -37,18 +37,18 @@ function RestaurantName({ Restaurant }) {
 }
 function RestaurantAddress({ Restaurant }) {
   return (
-    <span> Located at: 
+    <p> Located at: 
     <h5 className="RestaurantAddress">
       {Restaurant.address_obj.address_string}
     </h5>
-    </span>
+    </p>
   );
 }
 function RestaurantPriceLevel({ Restaurant }) {
   return (
-    <span>Price Level: <h5 className="RestaurantPriceLevel">
+    <p>Price Level: <h5 className="RestaurantPriceLevel">
       {Restaurant.price_level}
-    </h5></span>
+    </h5></p>
   );
 }
 function RestaurantRating({ Restaurant }) {
