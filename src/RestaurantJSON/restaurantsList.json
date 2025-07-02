@@ -1,0 +1,339 @@
+{
+  "updated": "2025-05-17T15:19:43.762Z",
+  "fetched": "2025-06-26T14:57:38.412Z",
+  "data": [
+    {
+      "location_id": "377651",
+      "name": "Blondie's Pizza",
+      "address_obj": {
+        "street1": "2340 Telegraph Ave",
+        "street2": "",
+        "city": "Berkeley",
+        "state": "California",
+        "country": "United States",
+        "postalcode": "94704-1613",
+        "address_string": "2340 Telegraph Ave, Berkeley, CA 94704-1613"
+      },
+      "website": "http://www.blondiespizza.com/",
+      "latitude": "37.867992",
+      "longitude": "-122.25924",
+      "phone": "+1 510-548-1129",
+      "rating": "3.4",
+      "price_level": "$",
+      "hours": {
+        "periods": [
+          {
+            "open": {
+              "day": 1,
+              "time": "1000"
+            },
+            "close": {
+              "day": 1,
+              "time": "0100"
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "time": "1000"
+            },
+            "close": {
+              "day": 2,
+              "time": "0100"
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "time": "1000"
+            },
+            "close": {
+              "day": 3,
+              "time": "0100"
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "time": "1000"
+            },
+            "close": {
+              "day": 4,
+              "time": "0100"
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "time": "1000"
+            },
+            "close": {
+              "day": 5,
+              "time": "0230"
+            }
+          },
+          {
+            "open": {
+              "day": 6,
+              "time": "1000"
+            },
+            "close": {
+              "day": 6,
+              "time": "0230"
+            }
+          },
+          {
+            "open": {
+              "day": 7,
+              "time": "1030"
+            },
+            "close": {
+              "day": 7,
+              "time": "0100"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 10:00 - 01:00",
+          "Tuesday: 10:00 - 01:00",
+          "Wednesday: 10:00 - 01:00",
+          "Thursday: 10:00 - 01:00",
+          "Friday: 10:00 - 02:30",
+          "Saturday: 10:00 - 02:30",
+          "Sunday: 10:30 - 01:00"
+        ]
+      },
+      "cuisine": [
+        {
+          "name": "american",
+          "localized_name": "American"
+        },
+        {
+          "name": "pizza",
+          "localized_name": "Pizza"
+        },
+        {
+          "name": "fast_food",
+          "localized_name": "Fast Food"
+        },
+        {
+          "name": "contemporary",
+          "localized_name": "Contemporary"
+        }
+      ]
+    },
+    {
+      "location_id": "5421501",
+      "name": "Eureka!",
+      "address_obj": {
+        "street1": "2068 Center Street",
+        "city": "Berkeley",
+        "state": "California",
+        "country": "United States",
+        "postalcode": "94704",
+        "address_string": "2068 Center Street, Berkeley, CA 94704"
+      },
+      "website": "http://eurekarestaurantgroup.com/locations/berkeley/",
+      "latitude": "37.86998",
+      "longitude": "-122.269005",
+      "phone": "+1 510-809-8282",
+      "rating": "4.2",
+      "price_level": "$$ - $$$",
+      "hours": {
+        "periods": [
+          {
+            "open": {
+              "day": 1,
+              "time": "1100"
+            },
+            "close": {
+              "day": 1,
+              "time": "0000"
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "time": "1100"
+            },
+            "close": {
+              "day": 2,
+              "time": "0000"
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "time": "1100"
+            },
+            "close": {
+              "day": 3,
+              "time": "0000"
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "time": "1100"
+            },
+            "close": {
+              "day": 4,
+              "time": "0000"
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "time": "1100"
+            },
+            "close": {
+              "day": 5,
+              "time": "0100"
+            }
+          },
+          {
+            "open": {
+              "day": 6,
+              "time": "1100"
+            },
+            "close": {
+              "day": 6,
+              "time": "0100"
+            }
+          },
+          {
+            "open": {
+              "day": 7,
+              "time": "1100"
+            },
+            "close": {
+              "day": 7,
+              "time": "0000"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 11:00 - 00:00",
+          "Tuesday: 11:00 - 00:00",
+          "Wednesday: 11:00 - 00:00",
+          "Thursday: 11:00 - 00:00",
+          "Friday: 11:00 - 01:00",
+          "Saturday: 11:00 - 01:00",
+          "Sunday: 11:00 - 00:00"
+        ]
+      },
+      "cuisine": [
+        {
+          "name": "american",
+          "localized_name": "American"
+        },
+        {
+          "name": "bar",
+          "localized_name": "Bar"
+        }
+      ]
+    },
+    {
+      "location_id": "378728",
+      "name": "Bongo Burger",
+      "address_obj": {
+        "street1": "2154 Center St",
+        "street2": "",
+        "city": "Berkeley",
+        "state": "California",
+        "country": "United States",
+        "postalcode": "94704-1304",
+        "address_string": "2154 Center St, Berkeley, CA 94704-1304"
+      },
+      "website": "http://bongoburger.com/",
+      "latitude": "37.87028",
+      "longitude": "-122.26646",
+      "phone": "+1 510-548-7700",
+      "rating": "4.3",
+      "price_level": "$",
+      "hours": {
+        "periods": [
+          {
+            "open": {
+              "day": 1,
+              "time": "1000"
+            },
+            "close": {
+              "day": 1,
+              "time": "1500"
+            }
+          },
+          {
+            "open": {
+              "day": 2,
+              "time": "1000"
+            },
+            "close": {
+              "day": 2,
+              "time": "1500"
+            }
+          },
+          {
+            "open": {
+              "day": 3,
+              "time": "1000"
+            },
+            "close": {
+              "day": 3,
+              "time": "1500"
+            }
+          },
+          {
+            "open": {
+              "day": 4,
+              "time": "1000"
+            },
+            "close": {
+              "day": 4,
+              "time": "1500"
+            }
+          },
+          {
+            "open": {
+              "day": 5,
+              "time": "1000"
+            },
+            "close": {
+              "day": 5,
+              "time": "1500"
+            }
+          },
+          {
+            "open": {
+              "day": 6,
+              "time": "1130"
+            },
+            "close": {
+              "day": 6,
+              "time": "1500"
+            }
+          }
+        ],
+        "weekday_text": [
+          "Monday: 10:00 - 15:00",
+          "Tuesday: 10:00 - 15:00",
+          "Wednesday: 10:00 - 15:00",
+          "Thursday: 10:00 - 15:00",
+          "Friday: 10:00 - 15:00",
+          "Saturday: 11:30 - 15:00",
+          "Sunday: Closed"
+        ]
+      },
+      "cuisine": [
+        {
+          "name": "american",
+          "localized_name": "American"
+        },
+        {
+          "name": "fast_food",
+          "localized_name": "Fast Food"
+        }
+      ]
+    }
+  ]
+}

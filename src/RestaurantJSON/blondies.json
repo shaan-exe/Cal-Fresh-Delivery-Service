@@ -1,0 +1,291 @@
+{
+  "location_id": "377651",
+  "name": "Blondie's Pizza",
+  "web_url": "https://www.tripadvisor.com/Restaurant_Review-g32066-d377651-Reviews-Blondie_s_Pizza-Berkeley_California.html?m=66827",
+  "address_obj": {
+    "street1": "2340 Telegraph Ave",
+    "street2": "",
+    "city": "Berkeley",
+    "state": "California",
+    "country": "United States",
+    "postalcode": "94704-1613",
+    "address_string": "2340 Telegraph Ave, Berkeley, CA 94704-1613"
+  },
+  "ancestors": [
+    {
+      "level": "City",
+      "name": "Berkeley",
+      "location_id": "32066"
+    },
+    {
+      "abbrv": "CA",
+      "level": "State",
+      "name": "California",
+      "location_id": "28926"
+    },
+    {
+      "level": "Country",
+      "name": "United States",
+      "location_id": "191"
+    }
+  ],
+  "latitude": "37.867992",
+  "longitude": "-122.25924",
+  "timezone": "America/Los_Angeles",
+  "phone": "+1 510-548-1129",
+  "website": "http://www.blondiespizza.com/",
+  "write_review": "https://www.tripadvisor.com/UserReview-g32066-d377651-Blondie_s_Pizza-Berkeley_California.html?m=66827",
+  "ranking_data": {
+    "geo_location_id": "32066",
+    "ranking_string": "#275 of 692 Places to Eat in Berkeley",
+    "geo_location_name": "Berkeley",
+    "ranking_out_of": "692",
+    "ranking": "275"
+  },
+  "rating": "3.4",
+  "rating_image_url": "https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/3.5-66827-5.svg",
+  "num_reviews": "41",
+  "review_rating_count": {
+    "1": "5",
+    "2": "6",
+    "3": "11",
+    "4": "7",
+    "5": "12"
+  },
+  "subratings": {
+    "0": {
+      "name": "rate_food",
+      "localized_name": "Food",
+      "rating_image_url": "https://static.tacdn.com/img2/ratings/traveler/ss3.5.svg",
+      "value": "3.5"
+    },
+    "1": {
+      "name": "rate_atmosphere",
+      "localized_name": "Atmosphere",
+      "rating_image_url": "https://static.tacdn.com/img2/ratings/traveler/ss3.0.svg",
+      "value": "3.2"
+    },
+    "2": {
+      "name": "rate_service",
+      "localized_name": "Service",
+      "rating_image_url": "https://static.tacdn.com/img2/ratings/traveler/ss3.5.svg",
+      "value": "3.3"
+    },
+    "3": {
+      "name": "rate_value",
+      "localized_name": "Value",
+      "rating_image_url": "https://static.tacdn.com/img2/ratings/traveler/ss3.5.svg",
+      "value": "3.6"
+    }
+  },
+  "photo_count": "3",
+  "see_all_photos": "https://www.tripadvisor.com/Restaurant_Review-g32066-d377651-m66827-Reviews-Blondie_s_Pizza-Berkeley_California.html#photos",
+  "price_level": "$",
+  "hours": {
+    "periods": [
+      {
+        "open": {
+          "day": 1,
+          "time": "1000"
+        },
+        "close": {
+          "day": 1,
+          "time": "0100"
+        }
+      },
+      {
+        "open": {
+          "day": 2,
+          "time": "1000"
+        },
+        "close": {
+          "day": 2,
+          "time": "0100"
+        }
+      },
+      {
+        "open": {
+          "day": 3,
+          "time": "1000"
+        },
+        "close": {
+          "day": 3,
+          "time": "0100"
+        }
+      },
+      {
+        "open": {
+          "day": 4,
+          "time": "1000"
+        },
+        "close": {
+          "day": 4,
+          "time": "0100"
+        }
+      },
+      {
+        "open": {
+          "day": 5,
+          "time": "1000"
+        },
+        "close": {
+          "day": 5,
+          "time": "0230"
+        }
+      },
+      {
+        "open": {
+          "day": 6,
+          "time": "1000"
+        },
+        "close": {
+          "day": 6,
+          "time": "0230"
+        }
+      },
+      {
+        "open": {
+          "day": 7,
+          "time": "1030"
+        },
+        "close": {
+          "day": 7,
+          "time": "0100"
+        }
+      }
+    ],
+    "weekday_text": [
+      "Monday: 10:00 - 01:00",
+      "Tuesday: 10:00 - 01:00",
+      "Wednesday: 10:00 - 01:00",
+      "Thursday: 10:00 - 01:00",
+      "Friday: 10:00 - 02:30",
+      "Saturday: 10:00 - 02:30",
+      "Sunday: 10:30 - 01:00"
+    ]
+  },
+  "features": [
+    "Seating",
+    "Takeout",
+    "Wheelchair Accessible"
+  ],
+  "cuisine": [
+    {
+      "name": "american",
+      "localized_name": "American"
+    },
+    {
+      "name": "pizza",
+      "localized_name": "Pizza"
+    },
+    {
+      "name": "fast_food",
+      "localized_name": "Fast Food"
+    },
+    {
+      "name": "contemporary",
+      "localized_name": "Contemporary"
+    }
+  ],
+  "category": {
+    "name": "restaurant",
+    "localized_name": "Restaurant"
+  },
+  "subcategory": [
+    {
+      "name": "sit_down",
+      "localized_name": "Sit down"
+    }
+  ],
+  "neighborhood_info": [],
+  "trip_types": [
+    {
+      "name": "business",
+      "localized_name": "Business",
+      "value": "0"
+    },
+    {
+      "name": "couples",
+      "localized_name": "Couples",
+      "value": "2"
+    },
+    {
+      "name": "solo",
+      "localized_name": "Solo travel",
+      "value": "6"
+    },
+    {
+      "name": "family",
+      "localized_name": "Family",
+      "value": "6"
+    },
+    {
+      "name": "friends",
+      "localized_name": "Friends getaway",
+      "value": "5"
+    }
+  ],
+  "awards": [],
+  "menu": [
+    {
+      "name": "Cheese Pizza Slice",
+      "description": "Classic cheese pizza slice.",
+      "price": "$6.99"
+    },
+    {
+      "name": "Pepperoni Pizza Slice",
+      "description": "Classic cheese and pepperoni slice.",
+      "price": "$7.99"
+    },
+    {
+      "name": "Vegetarian Pizza Slice",
+      "description": "Slice topped with mushrooms, tomatoes, green peppers, onions, and olives.",
+      "price": "$7.99"
+    },
+    {
+      "name": "Special Pie Slice",
+      "description": "Slice of the daily special pizza.",
+      "price": "$8.49"
+    },
+    {
+      "name": "Cheese Pizza (Whole)",
+      "description": "Classic cheese or create your own pizza.",
+      "price": "$13.00"
+    },
+    {
+      "name": "Pepperoni Pizza (Whole)",
+      "description": "Classic cheese and pepperoni.",
+      "price": "$14.00"
+    },
+    {
+      "name": "Vegetarian Pizza (Whole)",
+      "description": "Topped with mushrooms, tomatoes, green peppers, onions, and olives.",
+      "price": "$14.00"
+    },
+    {
+      "name": "Breadsticks",
+      "description": "Sticks of fluffy bread. Great as a snack or for dipping.",
+      "price": "$7.99"
+    },
+    {
+      "name": "Breadsticks with Cheese",
+      "description": "Breadsticks topped with melted cheese.",
+      "price": "$9.99"
+    },
+    {
+      "name": "Chicken Wings",
+      "description": "Buffalo or BBQ style chicken wings.",
+      "price": "$9.99"
+    },
+    {
+      "name": "Soda",
+      "description": "Assorted canned sodas.",
+      "price": "$2.00"
+    },
+    {
+      "name": "Snapple",
+      "description": "Assorted Snapple flavors.",
+      "price": "$3.25"
+    }
+  ]
+}
