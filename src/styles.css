@@ -1,2 +1,45 @@
-/* This file is already being imported to App.jsx */
-/* Add some sick styling! */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+}
+
+.Restaurant {
+  margin: 1vh;
+  padding: 1vw;
+  border: 1.25px solid black;
+  border-radius: 5%;
+  height: 100%;
+  width: 75%;
+  text-align: center;
+}
+
+#Restaurants {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  margin-top: 5vh;
+}
+
+.RestaurantTitle {
+  font-size: 1.5rem;
+}
+
+.RestaurantRating,
+.RestaurantPriceLevel,
+.RestaurantAddress {
+  font-size: 0.75rem;
+  padding: 0.5vw;
+}
+
+.RestaurantPriceLevel {
+  color: green;
+}
+
+.RestaurantAddress {
+  text-decoration: underline;
+}
