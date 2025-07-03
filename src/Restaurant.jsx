@@ -10,6 +10,9 @@ function RestaurantCard() {
   return (
     <div
       style={{
+        margin: "auto",
+        marginTop: "10vh",
+
         display: "flex",
         border: "1px solid black",
         boxShadow: "0 0 10px black",
@@ -37,39 +40,41 @@ function RestaurantDetails() {
         minWidth: "300px",
       }}
     >
-      <a
-        href={blondies.website}
-        style={{ textDecoration: "underline", color: "black" }}
-      >
-        <h1>{blondies.name}</h1>
-      </a>
-      <RestaurantAddress />
-      <RestaurantRatings />
-      <RestaurantPricing />
-      <RestaurantHours />
-      <RestaurantMenu />
+      <RestaurantWebsite website={blondies.website} name={blondies.name} />
+      <RestaurantAddress address={blondies.address_obj} />
+      <RestaurantRatings rating={blondies.rating} />
+      <RestaurantPricing price={blondies.price_level} />
+      <RestaurantHours hours={blondies.hours.weekday_text} />
+      <RestaurantMenu menuItems={blondies.menu} />
     </section>
   );
 }
 
-function RestaurantRatings() {
+function RestaurantRatings({ rating }) {
   return (
     <h3 className="RestaurantDetail" id="ratings">
-      {blondies.rating} / 5 Stars
+      {rating} / 5 Stars
     </h3>
   );
 }
 
-function RestaurantPricing() {
+function RestaurantWebsite({ website, name }) {
+  return (
+    <a href={website} style={{ textDecoration: "underline", color: "black" }}>
+      <h1>{name}</h1>
+    </a>
+  );
+}
+
+function RestaurantPricing({ price }) {
   return (
     <h4 className="RestaurantDetail" id="pricing" style={{ color: "green" }}>
-      {blondies.price_level}
+      {price}
     </h4>
   );
 }
 
-function RestaurantHours() {
-  let hours = blondies.hours.weekday_text;
+function RestaurantHours({ hours }) {
   const newHours = hours.map((hour) => {
     return <h3 key={hour}>{hour}</h3>;
   });
@@ -81,17 +86,15 @@ function RestaurantHours() {
   );
 }
 
-function RestaurantAddress() {
+function RestaurantAddress({ address }) {
   return (
     <h3 className="RestaurantDetail" id="address">
-      {blondies.address_obj.street1}
+      {address.street1 + address.city + ", " + address.state}
     </h3>
   );
 }
 
-function RestaurantMenu() {
-  let menuItems = blondies.menu;
-
+function RestaurantMenu({ menuItems }) {
   const newMenu = menuItems.map((item) => {
     return (
       <div style={{ display: "flex", justifyContent: "space-between" }}>
