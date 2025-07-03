@@ -1,6 +1,6 @@
-import "./styles.css";
+import "../styles.css";
 
-import blondies from "./RestaurantJSON/blondies.json";
+import blondies from "../RestaurantJSON/blondies.json";
 
 export default function Restaurant() {
   return <RestaurantCard />;

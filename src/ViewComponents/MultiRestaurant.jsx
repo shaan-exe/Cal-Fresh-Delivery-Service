@@ -1,6 +1,6 @@
-import "./styles.css";
+import "../styles.css";
 
-import restaurantsJSON from "./RestaurantJSON/restaurantsList.json";
+import restaurantsJSON from "../RestaurantJSON/restaurantsList.json";
 
 console.log(restaurantsJSON);
 export default function RestaurantsList() {
@@ -37,18 +37,21 @@ function RestaurantName({ Restaurant }) {
 }
 function RestaurantAddress({ Restaurant }) {
   return (
-    <p> Located at: 
-    <h5 className="RestaurantAddress">
-      {Restaurant.address_obj.address_string}
-    </h5>
+    <p>
+      {" "}
+      Located at:
+      <h5 className="RestaurantAddress">
+        {Restaurant.address_obj.address_string}
+      </h5>
     </p>
   );
 }
 function RestaurantPriceLevel({ Restaurant }) {
   return (
-    <p>Price Level: <h5 className="RestaurantPriceLevel">
-      {Restaurant.price_level}
-    </h5></p>
+    <p>
+      Price Level:{" "}
+      <h5 className="RestaurantPriceLevel">{Restaurant.price_level}</h5>
+    </p>
   );
 }
 function RestaurantRating({ Restaurant }) {

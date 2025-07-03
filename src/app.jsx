@@ -1,12 +1,13 @@
 import "./styles.css";
 // import your JSON in here too!
-
-export default function School() {
+import RestaurantsList from "./ViewComponents/MultiRestaurant.jsx";
+import Restaurant from "./ViewComponents/SingleRestaurant.jsx";
+export default function App() {
   return (
-    <main>
-      <h1>Hello world!</h1>
-      <p>Replace this JSX with your assignment.</p>
-    </main>
+    <>
+      <RestaurantsList />
+      <Restaurant />
+    </>
   );
 }
 
