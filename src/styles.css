@@ -43,6 +43,7 @@
 .RestaurantAddress {
   text-decoration: underline;
 }
+
 .SingleRestaurant {
   margin-top: 10vh;
   display: flex;
@@ -52,3 +53,9 @@
   height: 700px;
   width: 800px;
 }
+
+#RestaurantSingle{
+  background-color: red;
+
+}
+
