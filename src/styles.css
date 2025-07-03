@@ -43,7 +43,19 @@
 .RestaurantAddress {
   text-decoration: underline;
 }
+
+.SingleRestaurant {
+  margin-top: 10vh;
+  display: flex;
+  border: 1px solid black;
+  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+  height: 700px;
+  width: 800px;
+}
+
 #RestaurantSingle{
   background-color: red;
 
 }
+
