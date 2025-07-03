@@ -43,3 +43,7 @@
 .RestaurantAddress {
   text-decoration: underline;
 }
+#RestaurantSingle{
+  background-color: red;
+
+}

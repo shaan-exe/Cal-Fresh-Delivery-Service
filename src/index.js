@@ -10,6 +10,6 @@ const root = createRoot(rootElement);
 root.render(
   <StrictMode>
     <RestaurantsList/>
-    <Restaurant />
+    <Restaurant/>
   </StrictMode>
 );
