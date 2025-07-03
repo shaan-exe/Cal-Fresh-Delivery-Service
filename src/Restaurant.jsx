@@ -1,6 +1,6 @@
 import "./styles.css";
 
-import restaurantsJSON from "./RestaurantJSON/restaurantsList.json";
+import blondies from "./RestaurantJSON/blondies.json";
 
 export default function Restaurant() {
   return <RestaurantCard />;
@@ -10,9 +10,6 @@ function RestaurantCard() {
   return (
     <div
       style={{
-        margin: "auto",
-        marginTop: "10vh",
-
         display: "flex",
         border: "1px solid black",
         boxShadow: "0 0 10px black",
@@ -40,72 +37,61 @@ function RestaurantDetails() {
         minWidth: "300px",
       }}
     >
-      <RestaurantWebsite website={blondies.website} name={blondies.name} />
-      <RestaurantAddress address={blondies.address_obj} />
-      <RestaurantRatings rating={blondies.rating} />
-      <RestaurantPricing price={blondies.price_level} />
-      <RestaurantHours hours={blondies.hours.weekday_text} />
-      <RestaurantMenu menuItems={blondies.menu} />
-
-console.log(restaurantsJSON);
-export default function RestaurantsList() {
-  return (
-    <section id="Restaurants">
-      <Restaurants />
+      <a
+        href={blondies.website}
+        style={{ textDecoration: "underline", color: "black" }}
+      >
+        <h1>{blondies.name}</h1>
+      </a>
+      <RestaurantAddress />
+      <RestaurantRatings />
+      <RestaurantPricing />
+      <RestaurantHours />
+      <RestaurantMenu />
     </section>
   );
 }
 
-function RestaurantRatings({ rating }) {
+function RestaurantRatings() {
   return (
     <h3 className="RestaurantDetail" id="ratings">
-      {rating} / 5 Stars
+      {blondies.rating} / 5 Stars
     </h3>
   );
 }
 
-function RestaurantWebsite({ website, name }) {
-  return (
-    <a href={website} style={{ textDecoration: "underline", color: "black" }}>
-      <h1>{name}</h1>
-    </a>
-  );
-}
-
-function RestaurantPricing({ price }) {
+function RestaurantPricing() {
   return (
     <h4 className="RestaurantDetail" id="pricing" style={{ color: "green" }}>
-      {price}
+      {blondies.price_level}
     </h4>
   );
 }
 
-function RestaurantHours({ hours }) {
+function RestaurantHours() {
+  let hours = blondies.hours.weekday_text;
   const newHours = hours.map((hour) => {
     return <h3 key={hour}>{hour}</h3>;
-
-function Restaurants() {
-  const RestaurantData = restaurantsJSON.data;
-
-  const RestaurantList = RestaurantData.map((Restaurant) => {
-    return (
-      <RestaurantItem Restaurant={Restaurant} key={Restaurant.location_id} />
-    );
-
   });
-  return RestaurantList;
+
+  return (
+    <section style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
+      {newHours}
+    </section>
+  );
 }
 
-
-function RestaurantAddress({ address }) {
+function RestaurantAddress() {
   return (
     <h3 className="RestaurantDetail" id="address">
-      {address.street1 + address.city + ", " + address.state}
+      {blondies.address_obj.street1}
     </h3>
   );
 }
 
-function RestaurantMenu({ menuItems }) {
+function RestaurantMenu() {
+  let menuItems = blondies.menu;
+
   const newMenu = menuItems.map((item) => {
     return (
       <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -124,40 +110,40 @@ function RestaurantMenu({ menuItems }) {
     );
   });
 
+  return (
+    <section
+      style={{
+        overflowY: "auto",
+        maxHeight: "300px",
+        display: "flex",
+        gap: "15px",
+        flexDirection: "column",
+        scrollSnapType: "y mandatory",
+        minWidth: "320px",
+      }}
+    >
+      {newMenu}
+    </section>
+  );
+}
 
-function RestaurantItem({ Restaurant }) {
+function GoogleMaps() {
+  let address = blondies.address_obj.address_string;
+  const mapUrl = `https://www.google.com/maps?q=${
+    blondies.name
+  }, ${encodeURIComponent(address)}&output=embed`;
   return (
-    <div className="Restaurant" id={Restaurant.name}>
-      <RestaurantName Restaurant={Restaurant} />
-      <RestaurantAddress Restaurant={Restaurant} />
-      <RestaurantPriceLevel Restaurant={Restaurant} />
-      <RestaurantRating Restaurant={Restaurant} />
-    </div>
+    <iframe
+      src={mapUrl}
+      width="50%"
+      height="100%"
+      allowFullScreen=""
+      loading="lazy"
+      style={{
+        borderTopRightRadius: "10px",
+        borderBottomRightRadius: "10px",
+      }}
+      title="Google Maps"
+    />
   );
-}
-function RestaurantName({ Restaurant }) {
-  return <h1 className="RestaurantTitle">{Restaurant.name}</h1>;
-}
-function RestaurantAddress({ Restaurant }) {
-
-  return (
-    <p>
-      {" "}
-      Located at:
-      <h5 className="RestaurantAddress">
-        {Restaurant.address_obj.address_string}
-      </h5>
-    </p>
-  );
-}
-function RestaurantPriceLevel({ Restaurant }) {
-  return (
-    <p>
-      Price Level:{" "}
-      <h5 className="RestaurantPriceLevel">{Restaurant.price_level}</h5>
-    </p>
-  );
-}
-function RestaurantRating({ Restaurant }) {
-  return <h5 className="RestaurantRating">{Restaurant.rating} / 5 Stars</h5>;
 }
