@@ -1,148 +1,109 @@
 import "../styles.css";
-
 import blondies from "../RestaurantJSON/blondies.json";
-
-export default function Restaurant() {
-  return <RestaurantCard />;
-}
-
-function RestaurantCard() {
+import { useState } from "react";
+export default function Restaurant({ selectedRestaurant, handleAddToCart }) {
   return (
-    <div
-      style={{
-        display: "flex",
-        border: "1px solid black",
-        boxShadow: "0 0 10px black",
-        borderRadius: "10px",
-        height: "700px",
-        width: "800px",
-      }}
-    >
-      <RestaurantDetails />
-      <GoogleMaps />
-    </div>
+      <RestaurantCard
+        onAddToCart={handleAddToCart}
+        Restaurant={selectedRestaurant}
+      />
   );
 }
 
-function RestaurantDetails() {
+function RestaurantCard({ Restaurant, onAddToCart }) {
+  if (Restaurant) {
+    return (
+      <div className="restaurant-card">
+        <RestaurantDetails Restaurant={Restaurant} onAddToCart={onAddToCart} />
+        <GoogleMaps address={Restaurant.address_obj.address_string} />
+      </div>
+    );
+  }
+  return null;
+}
+
+function RestaurantDetails({ Restaurant, onAddToCart }) {
   return (
-    <section
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "50%",
-        gap: "20px",
-        alignItems: "center",
-        padding: "20px",
-        minWidth: "300px",
-      }}
-    >
-      <a
-        href={blondies.website}
-        style={{ textDecoration: "underline", color: "black" }}
-      >
-        <h1>{blondies.name}</h1>
-      </a>
-      <RestaurantAddress />
-      <RestaurantRatings />
-      <RestaurantPricing />
-      <RestaurantHours />
-      <RestaurantMenu />
+    <section className="restaurant-details">
+      <RestaurantWebsite website={Restaurant.website} name={Restaurant.name} />
+      <RestaurantAddress address={Restaurant.address_obj} />
+      <RestaurantRatings rating={Restaurant.rating} />
+      <RestaurantPricing price={Restaurant.price_level} />
+      <RestaurantHours hours={Restaurant.hours.weekday_text} />
+      <RestaurantMenu menuItems={Restaurant.menu} onAddToCart={onAddToCart} />
     </section>
   );
 }
 
-function RestaurantRatings() {
+function RestaurantRatings({ rating }) {
   return (
-    <h3 className="RestaurantDetail" id="ratings">
-      {blondies.rating} / 5 Stars
+    <h3 className="restaurant-detail" id="ratings">
+      {rating} / 5 Stars
     </h3>
   );
 }
 
-function RestaurantPricing() {
+function RestaurantWebsite({ website, name }) {
   return (
-    <h4 className="RestaurantDetail" id="pricing" style={{ color: "green" }}>
-      {blondies.price_level}
+    <a href={website} className="restaurant-website">
+      <h1>{name}</h1>
+    </a>
+  );
+}
+
+function RestaurantPricing({ price }) {
+  return (
+    <h4 className="restaurant-detail pricing" id="pricing">
+      {price}
     </h4>
   );
 }
 
-function RestaurantHours() {
-  let hours = blondies.hours.weekday_text;
-  const newHours = hours.map((hour) => {
-    return <h3 key={hour}>{hour}</h3>;
-  });
-
+function RestaurantHours({ hours }) {
   return (
-    <section style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-      {newHours}
+    <section className="restaurant-hours">
+      {hours.map((hour) => (
+        <h3 key={hour}>{hour}</h3>
+      ))}
     </section>
   );
 }
 
-function RestaurantAddress() {
+function RestaurantAddress({ address }) {
   return (
-    <h3 className="RestaurantDetail" id="address">
-      {blondies.address_obj.street1}
+    <h3 className="restaurant-detail" id="address">
+      {address.street1 + address.city + ", " + address.state}
     </h3>
   );
 }
 
-function RestaurantMenu() {
-  let menuItems = blondies.menu;
-
-  const newMenu = menuItems.map((item) => {
-    return (
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h3
-          className="RestaurantDetail"
-          id="menu"
-          key={item.name}
-          style={{
-            scrollSnapAlign: "start",
-          }}
-        >
-          {item.name}
-        </h3>
-        <h3>{item.price}</h3>
-      </div>
-    );
-  });
-
+function RestaurantMenu({ menuItems, onAddToCart }) {
   return (
-    <section
-      style={{
-        overflowY: "auto",
-        maxHeight: "300px",
-        display: "flex",
-        gap: "15px",
-        flexDirection: "column",
-        scrollSnapType: "y mandatory",
-        minWidth: "320px",
-      }}
-    >
-      {newMenu}
+    <section className="restaurant-menu">
+      {menuItems.map((item) => (
+        <div className="menu-item" key={item.name}>
+          <h3 className="restaurant-detail menu-item-name" id="menu">
+            {item.name}
+          </h3>
+          <h3 className="menu-item-price">{item.price}</h3>
+          <button className="AddToCart" onClick={() => onAddToCart(item)}>Add to Cart</button>
+        </div>
+      ))}
     </section>
   );
 }
 
-function GoogleMaps() {
-  let address = blondies.address_obj.address_string;
-  const mapUrl = `https://www.google.com/maps?q=${
-    blondies.name
-  }, ${encodeURIComponent(address)}&output=embed`;
+function GoogleMaps({ address }) {
+  const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(
+    address
+  )}&output=embed`;
+
   return (
     <iframe
+      className="restaurant-map"
       src={mapUrl}
-      width="50%"
-      height="100%"
       allowFullScreen=""
       loading="lazy"
-      style={{
-        borderTopRightRadius: "10px",
-        borderBottomRightRadius: "10px",
-      }}
       title="Google Maps"
     />
   );

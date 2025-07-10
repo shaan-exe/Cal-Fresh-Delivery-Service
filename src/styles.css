@@ -3,59 +3,216 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
 }
 
-.Restaurant {
-  margin: 1vh;
-  padding: 1vw;
-  border: 1.25px solid black;
-  border-radius: 5%;
-  height: 100%;
-  width: 75%;
-  text-align: center;
-}
-
 #Restaurants {
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  place-items: center;
-  margin-top: 5vh;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 10vh;
+  padding: 1rem;
+}
+#root {
+  margin: 5vh;
+}
+.Restaurant {
+  padding: 1rem;
+  border: 1.25px solid #bfb19f;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 1px black;
+  transition: all 0.3s ease-in-out;
+  background-color: #f2762e;
+  color: whitesmoke;
+}
+
+.Restaurant:hover {
+  background-color: #f2762e3b;
+  cursor: pointer;
+  box-shadow: none;
+  .RestaurantTitle {
+    color: white;
+  }
 }
 
 .RestaurantTitle {
   font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #fca873;
 }
 
 .RestaurantRating,
 .RestaurantPriceLevel,
 .RestaurantAddress {
-  font-size: 0.75rem;
-  padding: 0.5vw;
+  font-size: 0.875rem;
+  padding: 0.25rem;
 }
 
 .RestaurantPriceLevel {
-  color: green;
+  color: #3c92a6;
 }
 
 .RestaurantAddress {
   text-decoration: underline;
 }
 
-.SingleRestaurant {
-  margin-top: 10vh;
+#RestaurantSingle {
+  padding: 2rem 1rem;
+}
+
+.SingleRestaurant,
+.restaurant-card {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   border: 1px solid black;
   box-shadow: 0 0 10px black;
   border-radius: 10px;
-  height: 700px;
-  width: 800px;
+  width: 100%;
+  max-width: 900px;
+  margin: 5vh auto;
+  overflow: hidden;
+  background-color: #f2762e;
+  align-items: stretch;
+  flex-wrap: nowrap;
 }
 
-#RestaurantSingle{
-  background-color: red;
+@media (max-width: 768px) {
+  .SingleRestaurant,
+  .restaurant-card {
+    flex-direction: column;
+  }
 
+  .restaurant-map {
+    border-radius: 0 0 10px 10px !important;
+    height: 250px;
+  }
 }
 
+.restaurant-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1rem;
+  align-items: stretch;
+  padding: 1.5rem;
+}
+
+.restaurant-website {
+  text-decoration: underline;
+  color: #07c7f2;
+  word-wrap: break-word;
+}
+
+.pricing {
+  color: green;
+}
+
+.restaurant-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.restaurant-menu {
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  background-color: #eb905c;
+  padding: 8px;
+  border-radius: 5%;
+  overflow: hidden;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.restaurant-map {
+  flex: 1;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 100%;
+  width: 100%;
+  min-height: auto;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.restaurantsSearchBar,
+#cartBtn {
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  border: 2px solid white;
+  background-color: transparent;
+  margin: 10px;
+  color: white;
+}
+.AddToCart {
+  padding: 4px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  border: 2px solid white;
+  background-color: transparent;
+  margin: 5px;
+  color: white;
+}
+.restaurantsSearchBar::placeholder {
+  color: white;
+}
+.restaurantsSearchBar {
+  border: 2px solid white;
+}
+
+.cart-modal-cart {
+  background: #f2762e;
+  padding: 20px;
+  font-weight: 500;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.cart-modal-cart > h2 {
+  font-size: 2rem;
+}
+
+span > ins {
+  font-weight: 800;
+  font-size: 1.3rem;
+}

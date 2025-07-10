@@ -1,59 +1,80 @@
 import "../styles.css";
+import { useState } from "react";
+export default function RestaurantsList({
+  restaurantData,
+  selectRestaurantFunction,
+}) {
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+  const [searchTerm, setSearchTerm] = useState("");
+ 
+  const filteredRestaurants = restaurantData.filter((restaurant) =>
+    restaurant.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-import restaurantsJSON from "../RestaurantJSON/restaurantsList.json";
-
-console.log(restaurantsJSON);
-export default function RestaurantsList() {
   return (
-    <section id="Restaurants">
-      <Restaurants />
-    </section>
+    <>
+      <input
+        type="text"
+        className="restaurantsSearchBar"
+        value={searchTerm}
+        placeholder="Search for restaurants"
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <section id="Restaurants">
+        {filteredRestaurants.map((restaurant) => (
+          <RestaurantItem
+            key={restaurant.location_id}
+            restaurant={restaurant}
+            selectRestaurantFunction={selectRestaurantFunction}
+          />
+        ))}
+      </section>
+    </>
   );
 }
 
-function Restaurants() {
-  const RestaurantData = restaurantsJSON.data;
-
-  const RestaurantList = RestaurantData.map((Restaurant) => {
-    return (
-      <RestaurantItem Restaurant={Restaurant} key={Restaurant.location_id} />
-    );
-  });
-  return RestaurantList;
-}
-
-function RestaurantItem({ Restaurant }) {
+function RestaurantItem({ restaurant, selectRestaurantFunction }) {
   return (
-    <div className="Restaurant" id={Restaurant.name}>
-      <RestaurantName Restaurant={Restaurant} />
-      <RestaurantAddress Restaurant={Restaurant} />
-      <RestaurantPriceLevel Restaurant={Restaurant} />
-      <RestaurantRating Restaurant={Restaurant} />
+    <div
+      className="Restaurant"
+      id={restaurant.name}
+      onClick={() => selectRestaurantFunction(restaurant.location_id)}
+    >
+      <RestaurantName name={restaurant.name} />
+      <RestaurantAddress address={restaurant.address_obj.address_string} />
+      <RestaurantPriceLevel priceLevel={restaurant.price_level} />
+      <RestaurantRating rating={restaurant.rating} />
     </div>
   );
 }
-function RestaurantName({ Restaurant }) {
-  return <h1 className="RestaurantTitle">{Restaurant.name}</h1>;
+
+function RestaurantName({ name }) {
+  return <h1 className="RestaurantTitle">{name}</h1>;
 }
-function RestaurantAddress({ Restaurant }) {
+
+function RestaurantAddress({ address }) {
   return (
-    <p>
-      {" "}
+    <div>
       Located at:
-      <h5 className="RestaurantAddress">
-        {Restaurant.address_obj.address_string}
-      </h5>
-    </p>
+      <h5 className="RestaurantAddress">{address}</h5>
+    </div>
   );
 }
-function RestaurantPriceLevel({ Restaurant }) {
+
+function RestaurantPriceLevel({ priceLevel }) {
   return (
-    <p>
-      Price Level:{" "}
-      <h5 className="RestaurantPriceLevel">{Restaurant.price_level}</h5>
-    </p>
+    <div>
+      <h5 className="RestaurantPriceLevel">
+        {" "}
+        {priceLevel ? priceLevel : null}
+      </h5>
+    </div>
   );
 }
-function RestaurantRating({ Restaurant }) {
-  return <h5 className="RestaurantRating">{Restaurant.rating} / 5 Stars</h5>;
+
+function RestaurantRating({ rating }) {
+  return (
+    <h5 className="RestaurantRating">{rating} / 5 Stars</h5>
+    // <h5> No Ratings Available </h5>
+  );
 }

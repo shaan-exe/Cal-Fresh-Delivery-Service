@@ -3,10 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <title>React App</title>
+    <style>
+      #static {
+        background-image: url("./images/background.png");
+        width: 100vw;
+        height: 25vh;
+        background-size: cover;
+      }
+      h1 {
+        font-size: 5rem;
+        font-weight: 500;
+        color: beige;
+      }
+      body {
+        background-color: #fca873;
+      }
+    </style>
   </head>
 
   <body>
-    <noscript> You need to enable JavaScript to run this app. </noscript>
-    <div id="root"></div>
+    <div id="static">
+      <h1>Cal Fresh</h1>
+
+      <noscript> You need to enable JavaScript to run this app. </noscript>
+
+      <div id="root"></div>
+      <a href="https://atdpsites.berkeley.edu/evaluate/" target="_BLANK"
+        >evaluate</a
+      >
+      <a href="https://atdpsites.berkeley.edu/validate/" target="_BLANK"
+        >validate</a
+      >
+    </div>
   </body>
 </html>
